@@ -35,8 +35,6 @@
 2.  Open `index.html` in your browser.
 3.  No server or backend required — it's built for maximum performance as a PWA-ready frontend.
 
-## 🎓 Final Year Project Context
-This project was developed as part of a Final Year Project to solve the "Student Hunger Crisis" by making food price data transparent and accessible.
 
 ---
 Made with ❤️ in India by **Yug**
