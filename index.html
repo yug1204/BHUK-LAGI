@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhuk Lagi 🔥 – Find Cheap Food Near You</title>
+  <meta name="description" content="Bhuk Lagi helps you find the cheapest food near you — from street stalls to online delivery. Compare prices, discover deals, and satisfy your hunger without breaking the bank." />
+  <meta name="keywords" content="cheap food near me, budget food India, affordable restaurants, bhuk lagi, hunger app, cheap biryani, budget meals" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ======= NAV ======= -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <span class="logo-flame">🔥</span>
+        <span class="logo-text">Bhuk<span class="logo-accent">Lagi</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#deals" class="nav-link">Today's Deals</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-nav-location" id="detectLocationBtn">
+          <span class="btn-icon">📍</span> Set Location
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero" id="home">
+    <div class="hero-bg-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        India's #1 Budget Food Finder
+      </div>
+      <h1 class="hero-title">
+        Hungry But <span class="highlight-text">Broke?</span><br/>
+        We Got You <span class="wave-emoji">🤙</span>
+      </h1>
+      <p class="hero-subtitle">
+        Find the <strong>cheapest food</strong> near you — compare online delivery apps & offline restaurants, all in one place. No hunger, no empty wallet.
+      </p>
+
+      <!-- Main Search Box -->
+      <div class="search-container" id="searchContainer">
+        <div class="search-box">
+          <div class="search-emoji-selector" id="searchEmojiSelector" title="Select food type">🍛</div>
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search for biryani, thali, dosa..."
+            autocomplete="off"
+          />
+          <div class="search-divider"></div>
+          <div class="search-location-wrap">
+            <span class="search-location-icon">📍</span>
+            <input
+              type="text"
+              id="locationInput"
+              class="search-location-input"
+              placeholder="Your area..."
+              autocomplete="off"
+            />
+          </div>
+          <button class="search-btn" id="searchBtn">
+            Find Food 🔥
+          </button>
+        </div>
+        <!-- Quick Picks -->
+        <div class="quick-picks">
+          <span class="qp-label">Popular:</span>
+          <button class="qp-tag" data-food="biryani">🍚 Biryani</button>
+          <button class="qp-tag" data-food="thali">🍱 Thali</button>
+          <button class="qp-tag" data-food="dosa">🥞 Dosa</button>
+          <button class="qp-tag" data-food="pav bhaji">🍞 Pav Bhaji</button>
+          <button class="qp-tag" data-food="samosa">🥟 Samosa</button>
+          <button class="qp-tag" data-food="chai">☕ Chai + Snack</button>
+        </div>
+        <!-- Platform Showcase -->
+        <div class="platform-showcase-row">
+          <span class="qp-label">Searches across:</span>
+          <div id="platformShowcase" class="platform-showcase"></div>
+        </div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-target="2400">0</span><span class="stat-num">+</span>
+          <span class="stat-label">Restaurants Listed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="50">0</span><span class="stat-unit">%</span>
+          <span class="stat-label">Avg Savings</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="18">0</span><span class="stat-unit">K+</span>
+          <span class="stat-label">Happy Users</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-unit">₹</span><span class="stat-num" data-target="49">0</span>
+          <span class="stat-label">Meals From Just</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <div class="phone-status-bar">
+            <span>9:41</span>
+            <span>📶 🔋</span>
+          </div>
+          <div class="phone-header">
+            <span>🔥 BhukLagi</span>
+            <span class="phone-location-pill">📍 Andheri</span>
+          </div>
+          <div class="phone-search-preview">
+            <div class="psp-input">🔍 biryani near me...</div>
+          </div>
+          <div class="phone-results-preview">
+            <div class="psp-card">
+              <span class="psp-emoji">🍚</span>
+              <div class="psp-info">
+                <span class="psp-name">Sardar Biryani</span>
+                <span class="psp-meta">📍 0.3 km • ⭐ 4.5</span>
+              </div>
+              <span class="psp-price">₹79</span>
+            </div>
+            <div class="psp-card">
+              <span class="psp-emoji">🚴</span>
+              <div class="psp-info">
+                <span class="psp-name">Zomato – Paradise</span>
+                <span class="psp-meta">📍 1.2 km • 30 min</span>
+              </div>
+              <span class="psp-price psp-price-higher">₹149</span>
+            </div>
+            <div class="psp-card psp-card-best">
+              <span class="psp-badge-best">BEST DEAL 🏆</span>
+              <span class="psp-emoji">🛺</span>
+              <div class="psp-info">
+                <span class="psp-name">Hotel Noor Biryani</span>
+                <span class="psp-meta">📍 0.8 km • Walk-in</span>
+              </div>
+              <span class="psp-price">₹59</span>
+            </div>
+          </div>
+          <div class="phone-filter-row">
+            <span class="pf-chip pf-chip-active">Under ₹100</span>
+            <span class="pf-chip">Near Me</span>
+            <span class="pf-chip">Top Rated</span>
+          </div>
+        </div>
+      </div>
+      <div class="floating-badge fb-1">
+        <span>💰 Save ₹80!</span>
+      </div>
+      <div class="floating-badge fb-2">
+        <span>📍 0.3km away</span>
+      </div>
+      <div class="floating-badge fb-3">
+        <span>⭐ 4.8 Rating</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= BUDGET FILTER BAR ======= -->
+  <section class="budget-bar" id="budgetBar">
+    <div class="container">
+      <div class="budget-bar-inner">
+        <span class="bb-label">🎯 Set Your Budget:</span>
+        <div class="bb-filters">
+          <button class="bb-btn active" data-max="50">Under ₹50</button>
+          <button class="bb-btn" data-max="100">Under ₹100</button>
+          <button class="bb-btn" data-max="150">Under ₹150</button>
+          <button class="bb-btn" data-max="200">Under ₹200</button>
+          <button class="bb-btn" data-max="999">Any Budget</button>
+        </div>
+        <div class="bb-toggle-wrap">
+          <span class="bb-toggle-label">Online Only</span>
+          <label class="toggle" for="onlineToggle">
+            <input type="checkbox" id="onlineToggle" />
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="bb-toggle-label">Show All</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= RESULTS SECTION ======= -->
+  <section class="results-section" id="resultsSection" style="display:none;">
+    <div class="container">
+      <div class="results-header">
+        <h2 id="resultsTitle">🔍 Searching...</h2>
+        <div class="results-sort">
+          <label for="sortSelect">Sort by:</label>
+          <select id="sortSelect" class="sort-select">
+            <option value="price">💰 Lowest Price</option>
+            <option value="distance">📍 Nearest</option>
+            <option value="rating">⭐ Top Rated</option>
+          </select>
+        </div>
+      </div>
+      <div class="results-tabs">
+        <button class="rtab active" data-tab="all" id="tabAll">All Results</button>
+        <button class="rtab" data-tab="offline" id="tabOffline">🏪 Local Restaurants</button>
+        <button class="rtab" data-tab="online" id="tabOnline">🔴🟠 Online Apps</button>
+        <button class="rtab" data-tab="deals" id="tabDeals">🔥 Best Deals</button>
+      </div>
+      <div class="results-grid" id="resultsGrid">
+        <!-- Populated by JS -->
+      </div>
+      <div class="no-results" id="noResults" style="display:none;">
+        <span class="nr-emoji">😔</span>
+        <h3>No results found</h3>
+        <p>Try a different food item or location</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= HOW IT WORKS ======= -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Simple & Fast</span>
+        <h2 class="section-title">How <span class="highlight-text">BhukLagi</span> Works</h2>
+        <p class="section-subtitle">3 simple steps to find cheap food near you</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card" data-step="1">
+          <div class="step-number">01</div>
+          <div class="step-icon-wrap">
+            <div class="step-icon">🔍</div>
+          </div>
+          <h3 class="step-title">Search Your Craving</h3>
+          <p class="step-desc">Type in what you're craving — biryani, thali, dosa, anything! We search across thousands of restaurants instantly.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step-card" data-step="2">
+          <div class="step-number">02</div>
+          <div class="step-icon-wrap">
+            <div class="step-icon">📊</div>
+          </div>
+          <h3 class="step-title">Compare Prices</h3>
+          <p class="step-desc">We compare prices from Zomato, Swiggy, local dhabas, mess, hotel — and show you the cheapest option available near you.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step-card" data-step="3">
+          <div class="step-number">03</div>
+          <div class="step-icon-wrap">
+            <div class="step-icon">🍽️</div>
+          </div>
+          <h3 class="step-title">Eat & Save!</h3>
+          <p class="step-desc">Choose the best deal — order online or walk in. Save up to 60% on your food bill. Hunger solved, wallet happy!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FEATURES ======= -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Why BhukLagi?</span>
+        <h2 class="section-title">More Than Just a <span class="highlight-text">Food Finder</span></h2>
+        <p class="section-subtitle">Everything you need to eat well on a tight budget</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card feature-card-large">
+          <div class="fc-icon">🗺️</div>
+          <h3>Live Location-Based Search</h3>
+          <p>Automatically detects your area and shows restaurants within walking distance. Find food from 0.1km to 5km — your choice!</p>
+          <div class="fc-visual">
+            <div class="map-mini">
+              <div class="map-pin mp-1">🏪</div>
+              <div class="map-pin mp-2">🏠</div>
+              <div class="map-pin mp-3">🍛</div>
+              <div class="map-pulse"></div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">💰</div>
+          <h3>Price Comparison</h3>
+          <p>Compare the same dish across Zomato, Swiggy, and local restaurants. Always get the cheapest deal!</p>
+          <div class="fc-price-compare">
+            <div class="fcp-row">
+              <span class="fcp-platform">🟢 Swiggy</span>
+              <div class="fcp-bar" style="width:80%"><span>₹149</span></div>
+            </div>
+            <div class="fcp-row">
+              <span class="fcp-platform">🔴 Zomato</span>
+              <div class="fcp-bar" style="width:90%"><span>₹165</span></div>
+            </div>
+            <div class="fcp-row">
+              <span class="fcp-platform">🏪 Local</span>
+              <div class="fcp-bar fcp-bar-best" style="width:40%"><span>₹75</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">🎯</div>
+          <h3>Smart Budget Filter</h3>
+          <p>Set your max budget (₹50, ₹100, ₹150+) and we show ONLY what you can afford. No embarrassment, just food.</p>
+          <div class="fc-budget-pill-wrap">
+            <span class="fc-budget-pill">Under ₹50</span>
+            <span class="fc-budget-pill active">Under ₹100</span>
+            <span class="fc-budget-pill">Under ₹150</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">🏪</div>
+          <h3>Offline + Online Both</h3>
+          <p>Shows nearby dhabas, mess, canteens, street stalls AND online delivery options — complete comparison!</p>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">⭐</div>
+          <h3>Verified Reviews</h3>
+          <p>Real reviews from budget eaters like you. Know what's worth it before you spend your precious money.</p>
+        </div>
+        <div class="feature-card feature-card-highlight">
+          <div class="fc-icon">🚨</div>
+          <h3>Hunger Alert Deals</h3>
+          <p>Flash deals that last only a few hours — restaurants offer leftover discounts up to <strong>70% off</strong> to avoid food waste.</p>
+          <div class="fc-flash">
+            <span class="flash-timer" id="flashTimer">02:45:30</span>
+            <span class="flash-tag">LEFT TODAY</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= TODAY'S DEALS ======= -->
+  <section class="deals-section" id="deals">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge deal-badge">🔥 Live Deals</span>
+        <h2 class="section-title">Today's <span class="highlight-text">Cheapest Eats</span></h2>
+        <p class="section-subtitle">Real-time deals updated every hour — don't miss out!</p>
+      </div>
+      <div class="deals-grid" id="dealsGrid">
+        <!-- Populated by JS -->
+      </div>
+      <div class="deals-cta">
+        <p>🌟 Showing deals in <strong id="dealsCity">Mumbai</strong> — <a href="#searchContainer" class="link-styled" id="changeCity">Change City</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CATEGORIES ======= -->
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Browse by Food</span>
+        <h2 class="section-title">What Are You <span class="highlight-text">Craving?</span></h2>
+      </div>
+      <div class="categories-grid" id="categoriesGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= SAVINGS METER ======= -->
+  <section class="savings-section">
+    <div class="container">
+      <div class="savings-inner">
+        <div class="savings-text">
+          <h2>Track Your Food Savings 💸</h2>
+          <p>Every time you use BhukLagi instead of ordering blind, you save money. Our users save an average of <strong>₹1,200/month!</strong></p>
+          <div class="savings-bars">
+            <div class="sbar-row">
+              <span class="sbar-label">Without BhukLagi</span>
+              <div class="sbar"><div class="sbar-fill sbar-bad" style="width:100%;">₹3,000/mo</div></div>
+            </div>
+            <div class="sbar-row">
+              <span class="sbar-label">With BhukLagi</span>
+              <div class="sbar"><div class="sbar-fill sbar-good" style="width:60%;">₹1,800/mo</div></div>
+            </div>
+          </div>
+          <p class="savings-note">*Based on average user data, eating 2 meals/day</p>
+        </div>
+        <div class="savings-calculator">
+          <h3>💡 Calculate Your Savings</h3>
+          <div class="calc-row">
+            <label>Meals per day:</label>
+            <input type="range" id="mealsSlider" min="1" max="5" value="2" class="slider-input" />
+            <span id="mealsVal">2</span>
+          </div>
+          <div class="calc-row">
+            <label>Days per month:</label>
+            <input type="range" id="daysSlider" min="10" max="30" value="25" class="slider-input" />
+            <span id="daysVal">25</span>
+          </div>
+          <div class="calc-result">
+            <span class="cr-label">Your Estimated Monthly Savings:</span>
+            <span class="cr-amount" id="savingsResult">₹1,500</span>
+          </div>
+          <p class="calc-note">*Assuming avg ₹30 savings per meal vs normal ordering</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= ABOUT ======= -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-text">
+          <span class="section-badge">Our Mission</span>
+          <h2 class="section-title">No One Should <span class="highlight-text">Sleep Hungry</span> 😔</h2>
+          <p>BhukLagi was built with one simple thought — <em>what if someone is hungry but doesn't have much money?</em> Whether you're a student, a daily wager, or just watching your expenses — everyone deserves a hot, satisfying meal.</p>
+          <p>We aggregate food data from online platforms like Zomato & Swiggy and combine it with local restaurant, dhaba, mess & canteen data to give you the <strong>most complete picture of cheap food</strong> available near you.</p>
+          <div class="about-values">
+            <div class="av-item"><span>🤝</span> Inclusive</div>
+            <div class="av-item"><span>💯</span> Transparent</div>
+            <div class="av-item"><span>🔒</span> No Hidden Fees</div>
+            <div class="av-item"><span>🇮🇳</span> Made for India</div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="impact-card">
+            <div class="ic-stat"><span class="ic-num">18,000+</span><span class="ic-label">Meals Saved</span></div>
+            <div class="ic-stat"><span class="ic-num">₹2.1Cr</span><span class="ic-label">User Savings</span></div>
+            <div class="ic-stat"><span class="ic-num">47 Cities</span><span class="ic-label">And Growing</span></div>
+            <div class="ic-stat"><span class="ic-num">4.9 ⭐</span><span class="ic-label">User Rating</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span>🔥</span>
+            <span>BhukLagi</span>
+          </div>
+          <p>India's #1 budget food finder. Never go hungry again.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Instagram">📸</a>
+            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+            <a href="#" class="social-link" aria-label="Facebook">👥</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#home">Find Food</a></li>
+            <li><a href="#deals">Today's Deals</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Food Types</h4>
+          <ul>
+            <li><a href="#">Street Food</a></li>
+            <li><a href="#">Mess & Tiffin</a></li>
+            <li><a href="#">Online Delivery</a></li>
+            <li><a href="#">Canteen</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#">Partner With Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 BhukLagi. Made with ❤️ in India. Final Year Project — Food Tech Division.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======= MODALS ======= -->
+  <!-- Location Modal -->
+  <div class="modal-overlay" id="locationModal">
+    <div class="modal">
+      <button class="modal-close" id="closeLocationModal" onclick="document.getElementById('locationModal').classList.remove('show')">✕</button>
+      <h2>📍 Set Your Location</h2>
+      <p>We'll find the cheapest food near you!</p>
+      <button class="btn-primary btn-full" id="useGpsBtn">
+        <span>📡 Use My Current Location</span>
+      </button>
+      <div class="modal-divider"><span>or enter manually</span></div>
+      <input type="text" class="modal-input" id="manualLocationInput" placeholder="e.g. Andheri West, Mumbai" />
+      <button class="btn-secondary btn-full" id="setManualLocation">Set Location</button>
+    </div>
+  </div>
+
+  <!-- Food Detail Modal -->
+  <div class="modal-overlay" id="foodDetailModal">
+    <div class="modal modal-wide">
+      <button class="modal-close" id="closeFoodModal" onclick="document.getElementById('foodDetailModal').classList.remove('show')">✕</button>
+      <div id="foodDetailContent"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
